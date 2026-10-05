@@ -6,9 +6,6 @@ def write_shopping_list(items, filename):
         file.write(f"{c}. {i}\n")
         c += 1
     file.close()
-items = ["Bread", "Milk", "Eggs"]
-filename = "shopping_list.txt"
-write_shopping_list(items, filename)
 
 # Exercise 2
 def read_names(filename):
@@ -18,10 +15,9 @@ def read_names(filename):
     for line in lines:
         if line.strip() != "":
             lst.append(line.strip())
-    print(lst)
+    return lst
     file.close()
-filename = "names.tsx"
-read_names(filename)
+
 
 # Exercise 3
 def append_entry(filename, text):
@@ -37,9 +33,7 @@ def append_entry(filename, text):
         if found == False:
             file.write(item + "\n")
     file.close()
-filename = "log.txt"
-text = ["Mon", "Tue", "Wed"]
-append_entry(filename, text)
+
 
 # Exercise 4
 def search_file(filename, word):
