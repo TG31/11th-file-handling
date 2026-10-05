@@ -21,20 +21,29 @@ def read_names(filename):
 
 # Exercise 3
 def append_entry(filename, text):
-    file = open(filename, "r")
-    lines = file.readlines()
-    file.close()
     file = open(filename, "a")
-    for item in text:
-        found = False
-        for line in lines:
-            if line.strip() == item:
-                found = True
-        if found == False:
-            file.write(item + "\n")
+    file.write(text+"\n")
     file.close()
+    file = open(filename, "r")
+    lst = file.readlines()
+    file.close()
+    return len(lst)
 
 
+
+# def append_entry(filename, text):
+#     file = open(filename, "r")
+#     lines = file.readlines()
+#     file.close()
+#     file = open(filename, "a")
+#     for item in text:
+#         found = False
+#         for line in lines:
+#             if line.strip() == item:
+#                 found = True
+#         if found == False:
+#             file.write(item + "\n")
+#     file.close()
 # Exercise 4
 def search_file(filename, word):
     # Write your code here
